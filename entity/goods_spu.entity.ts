@@ -17,6 +17,7 @@ export class GoodsSpu {
     scale: 2,
     unsigned: true,
     nullable: false,
+    default: "0.00",
   })
   goods_first_sku_price: string;
 
@@ -30,7 +31,10 @@ export class GoodsSpu {
   goods_spu_total_favorite: number;
 
   @Column({ type: "json", nullable: true })
-  spu_sales_attrs: JSON;
+  spu_sales_attrs: Array<{ name: string; values: Array<string> }>;
+
+  @Column({ type: "boolean", nullable: false, default: false })
+  isGrounding: boolean;
 
   @Index()
   @Column({ type: "smallint", unsigned: true })
@@ -54,6 +58,13 @@ export class GoodsSpu {
     nullable: false,
   })
   add_time: Date;
+
+  @Column({
+    type: "timestamp",
+    default: () => "CURRENT_TIMESTAMP",
+    nullable: false,
+  })
+  update_time: Date;
 
   @Index()
   @Column({ type: "bigint", unsigned: true })

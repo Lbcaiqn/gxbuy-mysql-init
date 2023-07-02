@@ -1,5 +1,10 @@
 import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
+enum SexType {
+  MALE = "男",
+  REMALE = "女",
+}
+
 @Entity()
 export class User {
   @PrimaryGeneratedColumn({ type: "bigint", unsigned: true })
@@ -16,6 +21,13 @@ export class User {
 
   @Column({ type: "varchar", length: 250, nullable: false })
   user_icon: string;
+
+  @Column({
+    type: "enum",
+    enum: SexType,
+    nullable: false,
+  })
+  user_sex: SexType;
 
   @Column({ type: "int", unsigned: true, nullable: false, default: 0 })
   shopcart_total_all: number;
@@ -50,4 +62,11 @@ export class User {
     nullable: false,
   })
   add_time: Date;
+
+  @Column({
+    type: "timestamp",
+    default: () => "CURRENT_TIMESTAMP",
+    nullable: false,
+  })
+  update_time: Date;
 }

@@ -1,9 +1,21 @@
 import { Entity, Column, PrimaryGeneratedColumn, Index } from "typeorm";
 
 @Entity()
-export class UserBrowseHistory {
+export class UserAddress {
   @PrimaryGeneratedColumn({ type: "bigint", unsigned: true })
   _id: string;
+
+  @Column({ type: "varchar", length: 20, nullable: false })
+  name: string;
+
+  @Column({ type: "varchar", length: 20, nullable: false })
+  phone: string;
+
+  @Column({ type: "varchar", length: 20, nullable: false })
+  area: string;
+
+  @Column({ type: "varchar", length: 30, nullable: false })
+  detail: string;
 
   @Column({
     type: "timestamp",
@@ -22,8 +34,4 @@ export class UserBrowseHistory {
   @Index()
   @Column({ type: "bigint", unsigned: true })
   user_id: string;
-
-  @Index()
-  @Column({ type: "bigint", unsigned: true })
-  goods_spu_id: string;
 }

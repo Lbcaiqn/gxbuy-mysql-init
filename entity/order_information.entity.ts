@@ -21,6 +21,9 @@ export class OrderInformation {
   })
   order_state: StateType;
 
+  @Column({ type: "varchar", length: 30, nullable: false, default: "" })
+  order_notes: string;
+
   @Column({
     type: "timestamp",
     default: () => "CURRENT_TIMESTAMP",
@@ -38,4 +41,8 @@ export class OrderInformation {
   @Index()
   @Column({ type: "bigint", unsigned: true })
   user_id: string;
+
+  @Index()
+  @Column({ type: "bigint", unsigned: true })
+  shop_id: string;
 }

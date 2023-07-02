@@ -8,6 +8,7 @@ import { ShopManager } from "./entity/shop_manager.entity";
 import { ShopManagerRole } from "./entity/shop_manager_role.entity";
 import { SmMtmSmr } from "./entity/sm_mtm_smr.entity";
 import { User } from "./entity/user.entity";
+import { UserAddress } from "./entity/user_address.entity";
 import { UserFavorite } from "./entity/user_favorite.entity";
 import { UserBrowseHistory } from "./entity/user_browse_history.entity";
 import { UserSearchHistory } from "./entity/user_search_history.entity";
@@ -21,9 +22,11 @@ import { Category } from "./entity/category.entity";
 import { Shopcart } from "./entity/shopcart.entity";
 import { OrderInformation } from "./entity/order_information.entity";
 import { OrderItem } from "./entity/order_item.entity";
+import { GoodsComment } from "./entity/goods_comment.entity";
+import { ShopManagerSystemAuthority } from "./entity/shop_manager_system_authority.entity";
 
 let tableCnt = 0;
-let total = 32;
+let total = 45;
 
 const entity = [
   { type: HomeBanner, url: "./data/home_banner.json" },
@@ -36,6 +39,7 @@ const entity = [
   { type: SmMtmSmr, url: "./data/sm_mtm_smr.json" },
 
   { type: User, url: "./data/user.json" },
+  { type: UserAddress, url: "./data/user_address.json" },
   { type: UserFavorite, url: "./data/user_favorite.json" },
   { type: UserFollow, url: "./data/user_follow.json" },
   { type: UserBrowseHistory, url: "./data/user_browse_history.json" },
@@ -65,6 +69,23 @@ const entity = [
   { type: OrderItem, url: "./data/order_item/9.json" },
   { type: OrderItem, url: "./data/order_item/10.json" },
   { type: OrderItem, url: "./data/order_item/11.json" },
+
+  { type: GoodsComment, url: "./data/goods_comment/1.json" },
+  { type: GoodsComment, url: "./data/goods_comment/2.json" },
+  { type: GoodsComment, url: "./data/goods_comment/3.json" },
+  { type: GoodsComment, url: "./data/goods_comment/4.json" },
+  { type: GoodsComment, url: "./data/goods_comment/5.json" },
+  { type: GoodsComment, url: "./data/goods_comment/6.json" },
+  { type: GoodsComment, url: "./data/goods_comment/7.json" },
+  { type: GoodsComment, url: "./data/goods_comment/8.json" },
+  { type: GoodsComment, url: "./data/goods_comment/9.json" },
+  { type: GoodsComment, url: "./data/goods_comment/10.json" },
+  { type: GoodsComment, url: "./data/goods_comment/11.json" },
+
+  {
+    type: ShopManagerSystemAuthority,
+    url: "./data/shop_manager_system_authority.json",
+  },
 ];
 
 (async () => {
@@ -73,7 +94,7 @@ const entity = [
     host: "localhost",
     port: 3306,
     username: "root",
-    password: "123456",
+    password: "Lgx549@@",
     database: "gxbuy",
     entities: ["./entity/**/*.ts"],
     synchronize: true,
