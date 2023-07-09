@@ -94,7 +94,7 @@ const entity = [
     host: "localhost",
     port: 3306,
     username: "root",
-    password: "Lgx549@@",
+    password: "Lgx123456@@",
     database: "gxbuy",
     entities: ["./entity/**/*.ts"],
     synchronize: true,
